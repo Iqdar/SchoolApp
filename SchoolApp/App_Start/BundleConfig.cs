@@ -23,7 +23,7 @@ namespace SchoolApp
                       "~/Scripts/bootstrap.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Content/bootstrap.css",
+                      "~/Content/bootstrap-cereleum.css",
                       "~/Content/site.css"));
         }
     }
