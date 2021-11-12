@@ -1,0 +1,33 @@
+﻿@model SchoolApp.Models.ViewModels.SubjectViewModel
+
+@{
+    ViewBag.Title = "New";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>New Subject</h2>
+
+@using (Html.BeginForm("Save", "Subject"))
+{
+    <div class="form-group">
+        <label>Course Code:</label>
+        @Html.TextBoxFor(m => m.Subject.CoursCode, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        <label>Name:</label>
+        @Html.TextBoxFor(m => m.Subject.Name, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        <label>Teacher:</label>
+        @Html.DropDownListFor(m => m.Subject.Teacher, new SelectList(Model.Teacher, "Id", "Name"), "Select Teacher", new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        <label>Class:</label>
+        @Html.DropDownListFor(m => m.Subject.Teacher, new SelectList(Model.Stage, "Id", "ClassStage"), "Select Class", new { @class = "form-control" })
+    </div>
+
+    @Html.HiddenFor(m => m.Subject.Id)
+    <button type="submit" class="btn btn-primary">Submit</button>
+
+}
+

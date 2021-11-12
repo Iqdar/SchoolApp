@@ -17,5 +17,7 @@ namespace SchoolApp.Models
         public Teacher Teacher { get; set; }
         [Required]
         public int TeacherId { get; set; }
+
+        public ICollection<Student> Student { get; set; }
     }
 }

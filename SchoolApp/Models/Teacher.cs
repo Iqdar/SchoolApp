@@ -18,5 +18,8 @@ namespace SchoolApp.Models
         public DateTime DateOfBirth { get; set; }
         [Required]
         public DateTime DateJoined { get; set; }
+
+        public ICollection<Stage> Stage { get; set; }
+        public ICollection<Subject> Subject { get; set; }
     }
 }

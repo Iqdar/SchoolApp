@@ -1,0 +1,42 @@
+﻿@model IEnumerable<SchoolApp.Models.Teacher>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Teachers</h2>
+
+@if (!Model.Any())
+{
+    <p>We donot have any Teacher</p>
+}
+else
+{
+    <table class="table table-bordered table-hover">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Address</th>
+                <th>Date of Birth</th>
+                <th>Date Joined</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach(var teachers in Model)
+            {
+            <tr>
+                <td>@teachers.Id</td>
+                <td>@teachers.Name</td>
+                <td>@teachers.Address</td>
+                <td>@teachers.DateOfBirth</td>
+                <td>@teachers.DateJoined</td>
+                <td></td>
+            </tr>
+            }
+        </tbody>
+    </table>
+}
+

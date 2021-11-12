@@ -21,5 +21,7 @@ namespace SchoolApp.Models
         public Stage Stage { get; set; }
         [Required]
         public int StageId { get; set; }
+
+        public ICollection<Result> Result { get; set; }
     }
 }
