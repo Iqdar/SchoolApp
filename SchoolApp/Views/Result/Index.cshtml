@@ -1,8 +1,33 @@
-﻿
+﻿@model IEnumerable<SchoolApp.Models.Result>
+
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Index</h2>
-
+@if (!Model.Any()) { 
+    <p>No Result has been uploaded yet</p>
+}
+else{
+    <table>
+        <thead>
+            <tr>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach(var results in Model)
+            {
+            <tr>
+                <td>@results.Id</td>
+                <td>@results.Student.Name</td>
+                <td>@results.Stage.ClassStage + @results.Stage.Section</td>
+                <td>@results.Term</td>
+                <td>@results.Percentage</td>
+                <td>@results.Date</td>
+                <td></td>
+            </tr>
+            }
+        </tbody>
+    </table>
+}

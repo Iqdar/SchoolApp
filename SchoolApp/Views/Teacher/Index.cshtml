@@ -33,7 +33,9 @@ else
                 <td>@teachers.Address</td>
                 <td>@teachers.DateOfBirth</td>
                 <td>@teachers.DateJoined</td>
-                <td></td>
+                <td align="center">
+                        @Html.ActionLink("Edit", "Edit", "Teacher", new { id = teachers.Id }, null)
+                </td>
             </tr>
             }
         </tbody>

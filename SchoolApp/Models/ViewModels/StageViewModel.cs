@@ -9,5 +9,6 @@ namespace SchoolApp.Models.ViewModels
     {
         public Stage Stage { get; set; }
         public IEnumerable<Teacher> Teacher { get; set; }
+        public IEnumerable<Student> Student { get; set; }
     }
 }

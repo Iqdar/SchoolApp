@@ -1,8 +1,40 @@
-﻿
+﻿@model IEnumerable<SchoolApp.Models.Stage>
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Index</h2>
+@if (!Model.Any()) { 
+    <h2>There are No Classes</h2>
+}
+else
+{
+    <h2>Classes</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Class</th>
+                <th>Section</th>
+                <th>Teacher</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
 
+            @foreach(var classes in Model)
+            {
+            <tr>
+                <td>@classes.Id</td>
+                <td>@classes.ClassStage</td>
+                <td>@classes.Section</td>
+                <td>@classes.Teacher.Name</td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", "Class", new { id = classes.Id }, null) |
+                    @Html.ActionLink("Details", "Details", "Class", new { id = classes.Id }, null)
+                </td>
+            </tr>
+            }
+        </tbody>
+    </table>
+}

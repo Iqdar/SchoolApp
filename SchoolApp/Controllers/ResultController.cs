@@ -48,9 +48,12 @@ namespace SchoolApp.Controllers
         {
             var students = _context.Students.ToList();
             var stages = _context.Stages.ToList();
+            var result = new Result();
+            
             var viewModel = new ResultViewModel
             {
                 Student = students,
+                Result2 = result,
                 Stage = stages
             };
             return View("ResultForm", viewModel);
@@ -59,19 +62,14 @@ namespace SchoolApp.Controllers
         {
             var students = _context.Students.ToList();
             var stages = _context.Stages.ToList();
-            var result = _context.Results.Where(c => c.Id == id);
+            var result = _context.Results.SingleOrDefault(c => c.Id == id);
             var viewModel = new ResultViewModel
             {
-                Result = result,
+                Result2 = result,
                 Student = students,
                 Stage = stages
             };
             return View("ResultForm", viewModel);
-        }
-        public ActionResult Details(int id)
-        {
-            var result = _context.Results.SingleOrDefault(c => c.Id == id);
-            return View(result);
         }
 
         public ActionResult Index()

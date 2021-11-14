@@ -21,7 +21,9 @@ namespace SchoolApp.Models
         public Stage Stage { get; set; }
         [Required]
         public int StageId { get; set; }
-        
+        [Required]
+        public double Percentage { get; set; }
+
         [Required]
         public DateTime Date { get; set; }
     }

@@ -1,8 +1,34 @@
-﻿
+﻿@model SchoolApp.Models.ViewModels.StageViewModel
+
 @{
     ViewBag.Title = "StageForm";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>StageForm</h2>
+@if (Model.Stage.Id == 0)
+{
+    <h2>New Class</h2>
+}
+else
+{
+    <h2>Edit Class</h2>
+}
 
+@using (Html.BeginForm("Save", "Stage"))
+{
+    <div class="form-group">
+        <label>Class</label>
+        @Html.TextBoxFor(m => m.Stage.ClassStage, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        <label>Section</label>
+        @Html.TextBoxFor(m => m.Stage.Section, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        <label>Class</label>
+        @Html.DropDownListFor(m => m.Stage.TeacherId, new SelectList(Model.Teacher, "Id", "Name"), new { @class = "form-control" })
+    </div>
+
+    @Html.HiddenFor(m => m.Stage.Id)
+    <button type="submit" class="btn btn-primary">Submit</button>
+}

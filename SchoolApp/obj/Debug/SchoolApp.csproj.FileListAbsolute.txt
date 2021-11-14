@@ -87,3 +87,4 @@ D:\Studies\Projects\SchoolApp\SchoolApp\obj\Debug\SchoolApp.Migrations.AddedTabl
 D:\Studies\Projects\SchoolApp\SchoolApp\obj\Debug\SchoolApp.Migrations.AddedTable2.resources
 D:\Studies\Projects\SchoolApp\SchoolApp\obj\Debug\SchoolApp.Migrations.AddedTable3.resources
 D:\Studies\Projects\SchoolApp\SchoolApp\obj\Debug\SchoolApp.Migrations.AddedTable4.resources
+D:\Studies\Projects\SchoolApp\SchoolApp\obj\Debug\SchoolApp.Migrations.ResultTableUpdated.resources

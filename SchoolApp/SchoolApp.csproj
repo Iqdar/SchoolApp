@@ -156,6 +156,10 @@
     <Compile Include="Migrations\202111070502280_AddedTable4.designer.cs">
       <DependentUpon>202111070502280_AddedTable4.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202111140656069_ResultTableUpdated.cs" />
+    <Compile Include="Migrations\202111140656069_ResultTableUpdated.designer.cs">
+      <DependentUpon>202111140656069_ResultTableUpdated.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\MyDbContext.cs" />
     <Compile Include="Models\Result.cs" />
@@ -218,7 +222,6 @@
     <Content Include="Views\Student\Details.cshtml" />
     <Content Include="Views\Student\Index.cshtml" />
     <Content Include="Views\Result\ResultForm.cshtml" />
-    <Content Include="Views\Result\Details.cshtml" />
     <Content Include="Views\Result\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
@@ -252,6 +255,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202111070502280_AddedTable4.resx">
       <DependentUpon>202111070502280_AddedTable4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202111140656069_ResultTableUpdated.resx">
+      <DependentUpon>202111140656069_ResultTableUpdated.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

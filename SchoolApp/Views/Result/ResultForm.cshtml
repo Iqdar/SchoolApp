@@ -1,9 +1,44 @@
-﻿
+﻿@model SchoolApp.Models.ViewModels.ResultViewModel
 
 @{
     ViewBag.Title = "ResultForm";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>ResultForm</h2>
+@if (Model.Result2.Id == 0)
+{
+    <h2>Add Result</h2>
+}
+else
+{
+    <h2>Edit Result</h2>
+}
 
+@using (Html.BeginForm("Save", "Result"))
+{
+
+    <div class="form-group">
+        <label>Term</label>
+        @Html.TextBoxFor(m => m.Result2.Term, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        <label>Student</label>
+        @Html.DropDownListFor(m => m.Result2.StudentId, new SelectList(Model.Student, "Id", "Name"), new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        <label>Class</label>
+        @Html.DropDownListFor(m => m.Result2.StageId, new SelectList(Model.Stage, "Id", "ClassStage"), new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        <label>Percentage</label>
+        @Html.TextBoxFor(m => m.Result2.Percentage, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        <label>Date</label>
+        @Html.TextBoxFor(m => m.Result2.Date, new { @class = "form-control" })
+    </div>
+
+    @Html.HiddenFor(m => m.Result2.Id)
+    <button type="submit" class="btn btn-primary">Submit</button>
+
+}

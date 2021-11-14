@@ -5,7 +5,14 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>New Subject</h2>
+@if (Model.Subject.Id == 0)
+{
+    <h2>New Subject</h2>
+}
+else
+{
+    <h2>Edit Subject</h2>
+}
 
 @using (Html.BeginForm("Save", "Subject"))
 {
@@ -19,11 +26,11 @@
     </div>
     <div class="form-group">
         <label>Teacher:</label>
-        @Html.DropDownListFor(m => m.Subject.Teacher, new SelectList(Model.Teacher, "Id", "Name"), "Select Teacher", new { @class = "form-control" })
+        @Html.DropDownListFor(m => m.Subject.TeacherId, new SelectList(Model.Teacher, "Id", "Name"), "Select Teacher", new { @class = "form-control" })
     </div>
     <div class="form-group">
         <label>Class:</label>
-        @Html.DropDownListFor(m => m.Subject.Teacher, new SelectList(Model.Stage, "Id", "ClassStage"), "Select Class", new { @class = "form-control" })
+        @Html.DropDownListFor(m => m.Subject.StageId, new SelectList(Model.Stage, "Id", "ClassStage"), "Select Class", new { @class = "form-control" })
     </div>
 
     @Html.HiddenFor(m => m.Subject.Id)

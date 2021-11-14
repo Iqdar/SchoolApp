@@ -51,8 +51,10 @@ namespace SchoolApp.Controllers
         {
             var teachers = _context.Teachers.ToList();
             var stages = _context.Stages.ToList();
+            var subject = new Subject();
             var viewModel = new SubjectViewModel
             {
+                Subject = subject,
                 Teacher = teachers,
                 Stage = stages
             };

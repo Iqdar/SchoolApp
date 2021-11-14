@@ -51,7 +51,13 @@ namespace SchoolApp.Controllers
         public ActionResult New()
         {
             var stages = _context.Stages.ToList();
-            return View("StudentForm", stages);
+            var student = new Student();
+            var viewModel = new StudentViewModel
+            {
+                Stage = stages,
+                Student = student
+            };
+            return View("StudentForm", viewModel);
         }
         public ActionResult Edit(int id)
         {
@@ -67,11 +73,11 @@ namespace SchoolApp.Controllers
         }
         public ActionResult Details(int id)
         {
-            var student = _context.Students.Where(c => c.Id == id);
+            var student = _context.Students.Single(c => c.Id == id);
             var results = _context.Results.Where(c => c.StudentId == id).ToList();
             var viewModel = new ResultViewModel
             {
-                Student = student,
+                Student2 = student,
                 Result = results
             };
             return View(viewModel);
