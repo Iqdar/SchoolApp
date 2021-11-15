@@ -26,6 +26,19 @@ namespace SchoolApp.Controllers
         // GET: Result
         public ActionResult Save(Result result)
         {
+            if (!ModelState.IsValid)
+            {
+                var students = _context.Students.ToList();
+                var stages = _context.Stages.ToList();
+                var viewModel = new ResultViewModel
+                {
+                    Student = students,
+                    Result2 = result,
+                    Stage = stages
+                };
+                return View("ResultForm", viewModel);
+            }
+
             if(result.Id == 0)
             {
                 _context.Results.Add(result);

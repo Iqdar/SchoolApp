@@ -28,6 +28,18 @@ namespace SchoolApp.Controllers
 
         public ActionResult Save(Student student)
         {
+            if (!ModelState.IsValid)
+            {
+
+                var stages = _context.Stages.ToList();
+
+                var viewModel = new StudentViewModel
+                {
+                    Stage = stages,
+                    Student = student
+                };
+                return View("StudentForm", viewModel);
+            }
             if(student.Id == 0)
             {
                 _context.Students.Add(student);

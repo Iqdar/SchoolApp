@@ -19,14 +19,17 @@ else
     <div class="form-group">
         <label>Class</label>
         @Html.TextBoxFor(m => m.Stage.ClassStage, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Stage.ClassStage)
     </div>
     <div class="form-group">
         <label>Section</label>
         @Html.TextBoxFor(m => m.Stage.Section, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Stage.Section)
     </div>
     <div class="form-group">
         <label>Class</label>
         @Html.DropDownListFor(m => m.Stage.TeacherId, new SelectList(Model.Teacher, "Id", "Name"), new { @class = "form-control" })
+        @Html.ValidationMessageFor(M => M.Stage.TeacherId)
     </div>
 
     @Html.HiddenFor(m => m.Stage.Id)

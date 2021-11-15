@@ -27,6 +27,10 @@ namespace SchoolApp.Controllers
         [HttpPost]
         public ActionResult Save(Teacher teacher)
         {
+            if (!ModelState.IsValid)
+            {
+                return View("TeacherForm", teacher);
+            }
             if (teacher.Id == 0)
             {
                 _context.Teachers.Add(teacher);

@@ -28,6 +28,17 @@ namespace SchoolApp.Controllers
 
         public ActionResult Save(Stage stage)
         {
+            if (!ModelState.IsValid)
+            {
+                var teachers = _context.Teachers.ToList();
+                var viewModel = new StageViewModel
+                {
+                    Teacher = teachers,
+                    Stage = stage
+                };
+                return View("StageForm", viewModel);
+
+            }
             if (stage.Id == 0)
             {
                 _context.Stages.Add(stage);

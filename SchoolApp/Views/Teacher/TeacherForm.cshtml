@@ -19,18 +19,22 @@ else
     <div class=" form-group">
         <label>Name:</label>
         @Html.TextBoxFor(m => m.Name, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Name)
     </div>
     <div class=" form-group">
         <label>Address:</label>
         @Html.TextBoxFor(m => m.Address, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Address)
     </div>
     <div class=" form-group">
         <label>Date of Birth: </label>
         @Html.TextBoxFor(m => m.DateOfBirth, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.DateOfBirth)
     </div>
     <div class=" form-group">
         <label>Date Joined:</label>
         @Html.TextBoxFor(m => m.DateJoined, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.DateJoined)
     </div>
     @Html.HiddenFor(m => m.Id)
     <button type="submit" class="btn btn-primary">Submit</button>

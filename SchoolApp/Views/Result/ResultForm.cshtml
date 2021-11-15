@@ -20,22 +20,27 @@ else
     <div class="form-group">
         <label>Term</label>
         @Html.TextBoxFor(m => m.Result2.Term, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Result2.Term)
     </div>
     <div class="form-group">
         <label>Student</label>
         @Html.DropDownListFor(m => m.Result2.StudentId, new SelectList(Model.Student, "Id", "Name"), new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Result2.StudentId)
     </div>
     <div class="form-group">
         <label>Class</label>
         @Html.DropDownListFor(m => m.Result2.StageId, new SelectList(Model.Stage, "Id", "ClassStage"), new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Result2.StudentId)
     </div>
     <div class="form-group">
         <label>Percentage</label>
         @Html.TextBoxFor(m => m.Result2.Percentage, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Result2.Percentage)
     </div>
     <div class="form-group">
         <label>Date</label>
         @Html.TextBoxFor(m => m.Result2.Date, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Result2.Date)
     </div>
 
     @Html.HiddenFor(m => m.Result2.Id)

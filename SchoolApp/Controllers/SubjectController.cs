@@ -29,6 +29,19 @@ namespace SchoolApp.Controllers
         [HttpPost]
         public ActionResult Save(Subject subject)
         {
+            if (!ModelState.IsValid)
+            {
+                var teachers = _context.Teachers.ToList();
+                var stages = _context.Stages.ToList();
+                var viewModel = new SubjectViewModel
+                {
+                    Teacher = teachers,
+                    Stage = stages,
+                    Subject = subject
+                };
+                return View("SubjectForm", viewModel);
+
+            }
             if (subject.Id == 0)
             {
                 _context.Subjects.Add(subject);
