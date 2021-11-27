@@ -88,3 +88,12 @@ D:\Studies\Projects\SchoolApp\SchoolApp\obj\Debug\SchoolApp.Migrations.AddedTabl
 D:\Studies\Projects\SchoolApp\SchoolApp\obj\Debug\SchoolApp.Migrations.AddedTable3.resources
 D:\Studies\Projects\SchoolApp\SchoolApp\obj\Debug\SchoolApp.Migrations.AddedTable4.resources
 D:\Studies\Projects\SchoolApp\SchoolApp\obj\Debug\SchoolApp.Migrations.ResultTableUpdated.resources
+D:\Studies\Projects\SchoolApp\SchoolApp\bin\System.Net.Http.Formatting.dll
+D:\Studies\Projects\SchoolApp\SchoolApp\bin\System.Web.Cors.dll
+D:\Studies\Projects\SchoolApp\SchoolApp\bin\System.Web.Http.Cors.dll
+D:\Studies\Projects\SchoolApp\SchoolApp\bin\System.Web.Http.dll
+D:\Studies\Projects\SchoolApp\SchoolApp\bin\System.Web.Http.WebHost.dll
+D:\Studies\Projects\SchoolApp\SchoolApp\bin\System.Net.Http.Formatting.xml
+D:\Studies\Projects\SchoolApp\SchoolApp\bin\System.Web.Http.xml
+D:\Studies\Projects\SchoolApp\SchoolApp\bin\System.Web.Http.Cors.xml
+D:\Studies\Projects\SchoolApp\SchoolApp\bin\System.Web.Http.WebHost.xml
